@@ -3,11 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Cakes With Love | Custom Bakery Amanzimtoti</title>
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Cakes With Love | Custom Cakes & Bakery in Amanzimtoti, South Africa</title>
+  <meta name="title" content="Cakes With Love | Custom Cakes & Bakery in Amanzimtoti, South Africa">
+  <meta name="description" content="Beautiful custom cakes, cupcakes, desserts, savoury platters & baking supplies in Amanzimtoti. Trusted since 2020. Order on WhatsApp for birthdays, weddings & events.">
+  <meta name="keywords" content="cakes, custom cakes, cupcakes, bakery, Amanzimtoti, South Africa, wedding cakes, birthday cakes, dessert platters, baking supplies, personalised cookies, sweet treats">
+  <meta name="author" content="Cakes With Love">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content="7 days">
+  
+  <!-- Open Graph / Facebook Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cakeswithlove.co.za/">
+  <meta property="og:title" content="Cakes With Love | Custom Cakes & Bakery in Amanzimtoti">
+  <meta property="og:description" content="Beautiful custom cakes, cupcakes, desserts, savoury platters & baking supplies. Trusted in Amanzimtoti since 2020.">
+  <meta property="og:image" content="https://cakeswithlove.co.za/assets/images/og-image.jpg">
+  <meta property="og:site_name" content="Cakes With Love">
+  <meta property="og:locale" content="en_ZA">
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://cakeswithlove.co.za/">
+  <meta name="twitter:title" content="Cakes With Love | Custom Cakes & Bakery in Amanzimtoti">
+  <meta name="twitter:description" content="Beautiful custom cakes, cupcakes, desserts, savoury platters & baking supplies. Trusted in Amanzimtoti since 2020.">
+  <meta name="twitter:image" content="https://cakeswithlove.co.za/assets/images/og-image.jpg">
+  
+  <!-- Additional SEO Meta Tags -->
+  <meta name="geo.region" content="ZA-NL">
+  <meta name="geo.placename" content="Amanzimtoti">
+  <meta name="geo.position" content="-30.0523;30.8860">
+  <meta name="ICBM" content="-30.0523, 30.8860">
+  <meta name="rating" content="General">
+  <meta name="distribution" content="Global">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://cakeswithlove.co.za/">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  
   <!-- Google Fonts: Playfair Display + Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Font Awesome 6 (free icons) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
   <style>
     * {
       margin: 0;
@@ -77,7 +119,7 @@
       font-size: 1.1rem;
     }
 
-    /* Sticky Navigation - ALWAYS VISIBLE, NEVER SCROLLS AWAY */
+    /* Fixed Navbar - ALWAYS VISIBLE */
     .navbar {
       position: fixed;
       top: 0;
@@ -94,12 +136,10 @@
       transition: all 0.3s ease;
     }
 
-    /* Add padding to body to prevent content from hiding under fixed navbar */
     body {
       padding-top: 80px;
     }
 
-    /* Adjust padding for mobile */
     @media (max-width: 800px) {
       body {
         padding-top: 70px;
@@ -123,7 +163,6 @@
       color: #8B6F69;
     }
 
-    /* Desktop Navigation */
     .nav-links {
       display: flex;
       gap: 2rem;
@@ -140,7 +179,6 @@
       color: #D48C9C;
     }
 
-    /* Burger Menu Button (hidden on desktop) */
     .burger-menu {
       display: none;
       cursor: pointer;
@@ -155,12 +193,10 @@
       color: #A86F7E;
     }
 
-    /* Close button - hidden on desktop, only visible inside mobile menu */
     .close-menu {
       display: none;
     }
 
-    /* Mobile Navigation Overlay */
     @media (max-width: 800px) {
       .burger-menu {
         display: block;
@@ -328,7 +364,7 @@
       background-color: #20b859;
     }
 
-    /* About */
+    /* About, Services, Gallery, Contact styles (same as before) */
     .about-card {
       background: var(--white);
       border-radius: var(--radius-card);
@@ -361,7 +397,6 @@
       margin-top: 0.5rem;
     }
 
-    /* Services Grid */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -404,7 +439,6 @@
       font-size: 0.95rem;
     }
 
-    /* Gallery Grid with names */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -448,7 +482,6 @@
       font-size: 0.8rem;
     }
 
-    /* Contact Section */
     .contact-wrapper {
       background: var(--white);
       border-radius: var(--radius-card);
@@ -493,7 +526,6 @@
       transform: scale(1.02);
     }
 
-    /* Footer */
     footer {
       background: #FEF2EC;
       padding: 2rem 0;
@@ -517,7 +549,6 @@
       margin: 0 4px;
     }
 
-    /* Floating WhatsApp */
     .float-wa {
       position: fixed;
       bottom: 28px;
@@ -541,7 +572,6 @@
       background-color: #20b359;
     }
 
-    /* fade-in effect */
     .fade-up {
       opacity: 0;
       transform: translateY(20px);
@@ -552,7 +582,6 @@
       transform: translateY(0);
     }
 
-    /* responsive */
     @media (max-width: 800px) {
       .hero-content h1 {
         font-size: 2rem;
@@ -584,7 +613,6 @@
       }
     }
 
-    /* Small mobile devices */
     @media (max-width: 480px) {
       body {
         padding-top: 65px;
@@ -603,19 +631,17 @@
 </head>
 <body>
 
-<!-- Fixed Navbar - ALWAYS VISIBLE, NEVER MOVES -->
+<!-- Fixed Navbar -->
 <nav class="navbar" id="navbar">
   <div class="logo">
     <h1>Cakes With Love</h1>
     <p>Amanzimtoti • Est. 2020</p>
   </div>
   
-  <!-- Burger Menu Button (only visible on mobile) -->
   <button class="burger-menu" id="burgerBtn" aria-label="Menu">
     <i class="fas fa-bars"></i>
   </button>
   
-  <!-- Navigation Links -->
   <ul class="nav-links" id="navLinks">
     <li><a href="#home">Home</a></li>
     <li><a href="#about">About</a></li>
@@ -625,16 +651,14 @@
   </ul>
 </nav>
 
-<!-- Mobile Menu Close Button (separate element, only visible on mobile) -->
 <button class="close-menu" id="closeMenuBtn" aria-label="Close menu">
   <i class="fas fa-times"></i>
 </button>
 
 <main>
-  <!-- Hero Section -->
   <section id="home" class="hero">
-    <img class="hero-bg-image" src="assets/images/hero.png" alt="Bakery background with cakes and desserts" 
-         onerror="this.src='https://placehold.co/1920x1080/FDE9F0/F8C4D4?text=Upload+Your+Image+1920x1080';">
+    <img class="hero-bg-image" src="assets/images/hero.png" alt="Cakes With Love bakery display in Amanzimtoti" 
+         onerror="this.src='https://placehold.co/1920x1080/FDE9F0/F8C4D4?text=Cakes+With+Love+Bakery';">
     <div class="container hero-grid fade-up">
       <div class="hero-content">
         <div class="hero-badge">
@@ -650,7 +674,6 @@
     </div>
   </section>
 
-  <!-- About Section -->
   <section id="about">
     <div class="container fade-up">
       <div class="about-card">
@@ -664,107 +687,38 @@
     </div>
   </section>
 
-  <!-- Services Section -->
   <section id="services">
     <div class="container fade-up">
       <h2>Our Sweet & Savoury Offerings</h2>
       <p class="section-sub">Custom creations for every craving and celebration</p>
       <div class="services-grid">
-        <div class="service-card">
-          <div class="service-img" style="background-image: url('assets/images/cakes.png');" onerror="this.style.backgroundImage='url(https://placehold.co/600x450/FCE4EC/F2B5C5?text=Cakes+600x450)'"></div>
-          <div class="service-info">
-            <h3>🎂 Cakes</h3>
-            <p>Custom-designed cakes for birthdays, weddings, and special occasions, crafted to match your vision.</p>
-          </div>
-        </div>
-        <div class="service-card">
-          <div class="service-img" style="background-image: url('assets/images/cupcakes.png');" onerror="this.style.backgroundImage='url(https://placehold.co/600x450/FCE4EC/F2B5C5?text=Cupcakes+600x450)'"></div>
-          <div class="service-info">
-            <h3>🧁 Cupcakes</h3>
-            <p>Beautifully decorated cupcakes in a variety of flavors, perfect for events and gifting.</p>
-          </div>
-        </div>
-        <div class="service-card">
-          <div class="service-img" style="background-image: url('assets/images/sweetplatter.png');" onerror="this.style.backgroundImage='url(https://placehold.co/600x450/FCE4EC/F2B5C5?text=Desserts+600x450)'"></div>
-          <div class="service-info">
-            <h3>🍮 Desserts & Sweetmeats</h3>
-            <p>A selection of delicious desserts and traditional sweetmeats made fresh with quality ingredients.</p>
-          </div>
-        </div>
-        <div class="service-card">
-          <div class="service-img" style="background-image: url('assets/images/savoury.png');" onerror="this.style.backgroundImage='url(https://placehold.co/600x450/FCE4EC/F2B5C5?text=Savoury+600x450)'"></div>
-          <div class="service-info">
-            <h3>🥨 Savoury Platters</h3>
-            <p>Freshly prepared savoury platters ideal for parties, meetings, and gatherings.</p>
-          </div>
-        </div>
-        <div class="service-card">
-          <div class="service-img" style="background-image: url('assets/images/sweettreats.png');" onerror="this.style.backgroundImage='url(https://placehold.co/600x450/FCE4EC/F2B5C5?text=Baking+Supplies+600x450)'"></div>
-          <div class="service-info">
-            <h3>🥄 Baking Supplies</h3>
-            <p>We also supply baking essentials including ingredients, tools, and accessories for home bakers.</p>
-          </div>
-        </div>
-        <div class="service-card">
-          <div class="service-img" style="background-image: url('assets/images/platters.png');" onerror="this.style.backgroundImage='url(https://placehold.co/600x450/FCE4EC/F2B5C5?text=Sweet+Treats+600x450)'"></div>
-          <div class="service-info">
-            <h3>🍬 Sweet Treats</h3>
-            <p>Indulge in handmade fudge, chocolate bark, marshmallow pops, and old-fashioned sweets.</p>
-          </div>
-        </div>
-        <div class="service-card">
-          <div class="service-img" style="background-image: url('assets/images/personalise.png');" onerror="this.style.backgroundImage='url(https://placehold.co/600x450/FCE4EC/F2B5C5?text=Personalised+Cookies+600x450)'"></div>
-          <div class="service-info">
-            <h3>🍪 Personalised Cookies</h3>
-            <p>Custom-iced cookies with names or themed designs. Ideal for parties, weddings, and corporate gifts.</p>
-          </div>
-        </div>
-        <div class="service-card">
-          <div class="service-img" style="background-image: url('assets/images/gifts.png');" onerror="this.style.backgroundImage='url(https://placehold.co/600x450/FCE4EC/F2B5C5?text=Perfect+Gifts+600x450)'"></div>
-          <div class="service-info">
-            <h3>🎁 Perfect Gifts</h3>
-            <p>Curated gift boxes filled with an assortment of our finest bakes — from cookie jars to dessert hampers.</p>
-          </div>
-        </div>
+        <div class="service-card"><div class="service-img" style="background-image: url('assets/images/cakes.png');" onerror="this.style.backgroundImage='url(https://placehold.co/600x450/FCE4EC/F2B5C5?text=Cakes)'"></div><div class="service-info"><h3>🎂 Cakes</h3><p>Custom-designed cakes for birthdays, weddings, and special occasions.</p></div></div>
+        <div class="service-card"><div class="service-img" style="background-image: url('assets/images/cupcakes.png');" onerror="this.style.backgroundImage='url(https://placehold.co/600x450/FCE4EC/F2B5C5?text=Cupcakes)'"></div><div class="service-info"><h3>🧁 Cupcakes</h3><p>Beautifully decorated cupcakes in a variety of flavors.</p></div></div>
+        <div class="service-card"><div class="service-img" style="background-image: url('assets/images/sweetplatter.png');" onerror="this.style.backgroundImage='url(https://placehold.co/600x450/FCE4EC/F2B5C5?text=Desserts)'"></div><div class="service-info"><h3>🍮 Desserts & Sweetmeats</h3><p>Delicious desserts and traditional sweetmeats made fresh.</p></div></div>
+        <div class="service-card"><div class="service-img" style="background-image: url('assets/images/savoury.png');" onerror="this.style.backgroundImage='url(https://placehold.co/600x450/FCE4EC/F2B5C5?text=Savoury)'"></div><div class="service-info"><h3>🥨 Savoury Platters</h3><p>Freshly prepared savoury platters for parties and gatherings.</p></div></div>
+        <div class="service-card"><div class="service-img" style="background-image: url('assets/images/sweettreats.png');" onerror="this.style.backgroundImage='url(https://placehold.co/600x450/FCE4EC/F2B5C5?text=Baking+Supplies)'"></div><div class="service-info"><h3>🥄 Baking Supplies</h3><p>Baking essentials for home bakers and professionals.</p></div></div>
+        <div class="service-card"><div class="service-img" style="background-image: url('assets/images/platters.png');" onerror="this.style.backgroundImage='url(https://placehold.co/600x450/FCE4EC/F2B5C5?text=Sweet+Treats)'"></div><div class="service-info"><h3>🍬 Sweet Treats</h3><p>Handmade fudge, chocolate bark, and old-fashioned sweets.</p></div></div>
+        <div class="service-card"><div class="service-img" style="background-image: url('assets/images/personalise.png');" onerror="this.style.backgroundImage='url(https://placehold.co/600x450/FCE4EC/F2B5C5?text=Personalised+Cookies)'"></div><div class="service-info"><h3>🍪 Personalised Cookies</h3><p>Custom-iced cookies for birthdays, weddings, and gifts.</p></div></div>
+        <div class="service-card"><div class="service-img" style="background-image: url('assets/images/gifts.png');" onerror="this.style.backgroundImage='url(https://placehold.co/600x450/FCE4EC/F2B5C5?text=Gifts)'"></div><div class="service-info"><h3>🎁 Perfect Gifts</h3><p>Curated gift boxes filled with our finest bakes.</p></div></div>
       </div>
     </div>
   </section>
 
-  <!-- Gallery Section -->
   <section id="gallery">
     <div class="container fade-up">
       <h2>Sweet Moments Gallery</h2>
       <p class="section-sub">A glimpse of our creations — from elegant cakes to personalised cookies</p>
       <div class="gallery-grid">
-        <div class="gallery-item">
-          <img class="gallery-img" src="assets/images/gallery-cake.jpg" alt="Elegant custom cake" onerror="this.src='https://placehold.co/500x500/FDE9F0/D48C9C?text=Elegant+Cake+500x500'">
-          <div class="gallery-name"><i class="fas fa-birthday-cake"></i> Elegant Celebration Cake</div>
-        </div>
-        <div class="gallery-item">
-          <img class="gallery-img" src="assets/images/gallery-cupcakes.jpg" alt="Cupcakes" onerror="this.src='https://placehold.co/500x500/FDE9F0/D48C9C?text=Cupcakes+500x500'">
-          <div class="gallery-name"><i class="fas fa-candy-cane"></i> Gourmet Cupcakes</div>
-        </div>
-        <div class="gallery-item">
-          <img class="gallery-img" src="assets/images/gallery-desserts.jpg" alt="Dessert platter" onerror="this.src='https://placehold.co/500x500/FDE9F0/D48C9C?text=Desserts+500x500'">
-          <div class="gallery-name"><i class="fas fa-mug-hot"></i> Dessert & Sweetmeats</div>
-        </div>
-        <div class="gallery-item">
-          <img class="gallery-img" src="assets/images/gallery-savoury.jpg" alt="Savoury Platter" onerror="this.src='https://placehold.co/500x500/FDE9F0/D48C9C?text=Savoury+Platter+500x500'">
-          <div class="gallery-name"><i class="fas fa-cheese"></i> Savoury Platter</div>
-        </div>
-        <div class="gallery-item">
-          <img class="gallery-img" src="assets/images/gallery-cookies.jpg" alt="Personalised Cookies" onerror="this.src='https://placehold.co/500x500/FDE9F0/D48C9C?text=Cookies+500x500'">
-          <div class="gallery-name"><i class="fas fa-cookie-bite"></i> Personalised Cookies</div>
-        </div>
-        <div class="gallery-item">
-          <img class="gallery-img" src="assets/images/gallery-gifts.jpg" alt="Perfect Gifts Box" onerror="this.src='https://placehold.co/500x500/FDE9F0/D48C9C?text=Gift+Hampers+500x500'">
-          <div class="gallery-name"><i class="fas fa-gift"></i> Perfect Gift Hampers</div>
-        </div>
+        <div class="gallery-item"><img class="gallery-img" src="assets/images/gallery-cake.jpg" alt="Elegant celebration cake" onerror="this.src='https://placehold.co/500x500/FDE9F0/D48C9C?text=Elegant+Cake'"><div class="gallery-name"><i class="fas fa-birthday-cake"></i> Elegant Celebration Cake</div></div>
+        <div class="gallery-item"><img class="gallery-img" src="assets/images/gallery-cupcakes.jpg" alt="Gourmet cupcakes" onerror="this.src='https://placehold.co/500x500/FDE9F0/D48C9C?text=Cupcakes'"><div class="gallery-name"><i class="fas fa-candy-cane"></i> Gourmet Cupcakes</div></div>
+        <div class="gallery-item"><img class="gallery-img" src="assets/images/gallery-desserts.jpg" alt="Dessert and sweetmeats platter" onerror="this.src='https://placehold.co/500x500/FDE9F0/D48C9C?text=Desserts'"><div class="gallery-name"><i class="fas fa-mug-hot"></i> Dessert & Sweetmeats</div></div>
+        <div class="gallery-item"><img class="gallery-img" src="assets/images/gallery-savoury.jpg" alt="Savoury party platter" onerror="this.src='https://placehold.co/500x500/FDE9F0/D48C9C?text=Savoury+Platter'"><div class="gallery-name"><i class="fas fa-cheese"></i> Savoury Platter</div></div>
+        <div class="gallery-item"><img class="gallery-img" src="assets/images/gallery-cookies.jpg" alt="Personalised decorated cookies" onerror="this.src='https://placehold.co/500x500/FDE9F0/D48C9C?text=Personalised+Cookies'"><div class="gallery-name"><i class="fas fa-cookie-bite"></i> Personalised Cookies</div></div>
+        <div class="gallery-item"><img class="gallery-img" src="assets/images/gallery-gifts.jpg" alt="Gift hampers and treat boxes" onerror="this.src='https://placehold.co/500x500/FDE9F0/D48C9C?text=Gift+Hampers'"><div class="gallery-name"><i class="fas fa-gift"></i> Perfect Gift Hampers</div></div>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
   <section id="contact">
     <div class="container fade-up">
       <h2>Get In Touch</h2>
@@ -786,112 +740,97 @@
   </section>
 </main>
 
-<!-- Footer -->
 <footer>
   <div class="container footer-content">
     <h3 style="font-family: 'Playfair Display'; color: #C88699;">Cakes With Love</h3>
     <p>✨ Established 2020 ✨</p>
-    <p>&copy; 2025 Cakes With Love – Handcrafted with joy in Amanzimtoti. All rights reserved.</p>
+    <p>&copy; 2026 Cakes With Love – Handcrafted with joy in Amanzimtoti. All rights reserved.</p>
     <div class="design-credit">
       <i class="fas fa-palette"></i> Designed by Inkspire Digital Designs
     </div>
   </div>
 </footer>
 
-<!-- Floating WhatsApp Button -->
 <a href="https://wa.me/27636961897?text=Hi%20Cakes%20With%20Love%2C%20I'd%20like%20to%20place%20an%20order" class="float-wa" target="_blank" rel="noopener noreferrer">
   <i class="fab fa-whatsapp"></i>
 </a>
 
-<!-- JavaScript -->
+<!-- Schema.org Structured Data for Local Business -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Bakery",
+  "name": "Cakes With Love",
+  "image": "https://cakeswithlove.co.za/assets/images/logo.png",
+  "description": "Beautiful custom cakes, cupcakes, desserts, savoury platters and baking supplies in Amanzimtoti, South Africa. Trusted since 2020.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Amanzimtoti",
+    "addressRegion": "KwaZulu-Natal",
+    "addressCountry": "ZA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "-30.0523",
+    "longitude": "30.8860"
+  },
+  "url": "https://cakeswithlove.co.za/",
+  "telephone": "+27636961897",
+  "email": "cindybaijoo@gmail.com",
+  "priceRange": "$$",
+  "openingHours": "Mo-Su 09:00-18:00",
+  "sameAs": [
+    "https://wa.me/27636961897"
+  ],
+  "servesCuisine": "Bakery, Custom Cakes, Desserts",
+  "foundingDate": "2020",
+  "founders": [
+    {
+      "@type": "Person",
+      "name": "Cindy Baijoo"
+    }
+  ]
+}
+</script>
+
 <script>
-  // Burger Menu Functionality
   const burgerBtn = document.getElementById('burgerBtn');
   const navLinks = document.getElementById('navLinks');
   const closeMenuBtn = document.getElementById('closeMenuBtn');
   
-  function openMenu() {
-    navLinks.classList.add('active');
-    closeMenuBtn.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-  }
-  
-  function closeMenu() {
-    navLinks.classList.remove('active');
-    closeMenuBtn.style.display = 'none';
-    document.body.style.overflow = '';
-  }
+  function openMenu() { navLinks.classList.add('active'); closeMenuBtn.style.display = 'block'; document.body.style.overflow = 'hidden'; }
+  function closeMenu() { navLinks.classList.remove('active'); closeMenuBtn.style.display = 'none'; document.body.style.overflow = ''; }
   
   burgerBtn.addEventListener('click', openMenu);
   closeMenuBtn.addEventListener('click', closeMenu);
   
-  // Close menu when clicking on a link
-  const navItems = document.querySelectorAll('.nav-links a');
-  navItems.forEach(item => {
-    item.addEventListener('click', () => {
-      closeMenu();
-    });
-  });
+  document.querySelectorAll('.nav-links a').forEach(item => { item.addEventListener('click', () => { closeMenu(); }); });
   
-  // Close menu when clicking outside on mobile
   document.addEventListener('click', function(event) {
     const isClickInsideNav = navLinks.contains(event.target);
     const isClickOnBurger = burgerBtn.contains(event.target);
     const isClickOnClose = closeMenuBtn.contains(event.target);
-    
-    if (navLinks.classList.contains('active') && !isClickInsideNav && !isClickOnBurger && !isClickOnClose) {
-      closeMenu();
-    }
+    if (navLinks.classList.contains('active') && !isClickInsideNav && !isClickOnBurger && !isClickOnClose) { closeMenu(); }
   });
   
-  // Navbar shadow effect on scroll
   const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 50) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  });
+  window.addEventListener('scroll', function() { navbar.classList.toggle('scrolled', window.scrollY > 50); });
   
-  // Fade-up effect on scroll
   const fadeElements = document.querySelectorAll('.fade-up');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('appear');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: "0px 0px -20px 0px" });
+  const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('appear'); observer.unobserve(entry.target); } }); }, { threshold: 0.1 });
   fadeElements.forEach(el => observer.observe(el));
   
-  // Smooth scroll for navigation links
   document.querySelectorAll('.nav-links a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const targetId = this.getAttribute('href');
-      if(targetId && targetId !== '#') {
-        const targetEl = document.querySelector(targetId);
-        if(targetEl) {
-          e.preventDefault();
-          targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }
+      if(targetId && targetId !== '#') { const targetEl = document.querySelector(targetId); if(targetEl) { e.preventDefault(); targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }
     });
   });
   
-  // Handle resize for close button visibility
   function handleResize() {
-    if (window.innerWidth > 800) {
-      closeMenu();
-      closeMenuBtn.style.display = 'none';
-    } else {
-      if (!navLinks.classList.contains('active')) {
-        closeMenuBtn.style.display = 'none';
-      }
-    }
+    if (window.innerWidth > 800) { closeMenu(); closeMenuBtn.style.display = 'none'; }
+    else { if (!navLinks.classList.contains('active')) { closeMenuBtn.style.display = 'none'; } }
   }
-  
   window.addEventListener('resize', handleResize);
   handleResize();
 </script>
