@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Cakes With Love | Custom Bakery Amanzimtoti</title>
+  <!-- Google Fonts: Playfair Display + Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (free icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #FFF9F7;
+      color: #2C2A2A;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    /* Soft color palette */
+    :root {
+      --pink-light: #FCE4EC;
+      --pink-soft: #F8D8E8;
+      --pink-primary: #F2B5C5;
+      --cream: #FFF5F0;
+      --white: #FFFFFF;
+      --soft-black: #3A3535;
+      --shadow-card: 0 20px 30px -12px rgba(0, 0, 0, 0.08);
+      --shadow-hover: 0 25px 35px -12px rgba(0, 0, 0, 0.15);
+      --radius-card: 1.8rem;
+      --radius-btn: 3rem;
+    }
+
+    /* Global */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: 5rem 0;
+    }
+
+    h1, h2, h3, .logo-font {
+      font-family: 'Playfair Display', serif;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #4A2E2A;
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+    }
+    h2:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--pink-primary);
+      border-radius: 10px;
+    }
+
+    .section-sub {
+      color: #6B5B58;
+      margin-bottom: 3rem;
+      font-size: 1.1rem;
+    }
+
+    /* Sticky Navigation - ALWAYS VISIBLE, NEVER SCROLLS AWAY */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(255, 250, 245, 0.96);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+
+    /* Add padding to body to prevent content from hiding under fixed navbar */
+    body {
+      padding-top: 80px;
+    }
+
+    /* Adjust padding for mobile */
+    @media (max-width: 800px) {
+      body {
+        padding-top: 70px;
+      }
+    }
+
+    .navbar.scrolled {
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      background: rgba(255, 250, 245, 0.98);
+    }
+
+    .logo h1 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #C98A9C;
+      letter-spacing: -0.5px;
+    }
+    .logo p {
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+      color: #8B6F69;
+    }
+
+    /* Desktop Navigation */
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #3F2E2A;
+      transition: 0.2s;
+      font-size: 1rem;
+    }
+    .nav-links a:hover {
+      color: #D48C9C;
+    }
+
+    /* Burger Menu Button (hidden on desktop) */
+    .burger-menu {
+      display: none;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      color: #C98A9C;
+      transition: 0.2s;
+      z-index: 1001;
+    }
+    .burger-menu:hover {
+      color: #A86F7E;
+    }
+
+    /* Close button - hidden on desktop, only visible inside mobile menu */
+    .close-menu {
+      display: none;
+    }
+
+    /* Mobile Navigation Overlay */
+    @media (max-width: 800px) {
+      .burger-menu {
+        display: block;
+      }
+      
+      .close-menu {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 1.8rem;
+        color: #C98A9C;
+        cursor: pointer;
+        background: none;
+        border: none;
+        transition: 0.2s;
+        z-index: 1002;
+      }
+      .close-menu:hover {
+        color: #A86F7E;
+      }
+      
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        max-width: 320px;
+        height: 100vh;
+        background: rgba(255, 248, 245, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: right 0.3s ease-in-out;
+        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.15);
+        z-index: 1000;
+        padding: 2rem;
+      }
+      
+      .nav-links.active {
+        right: 0;
+      }
+      
+      .nav-links li {
+        width: 100%;
+        text-align: center;
+      }
+      
+      .nav-links a {
+        display: block;
+        padding: 0.8rem;
+        font-size: 1.2rem;
+        font-weight: 500;
+      }
+      
+      .navbar {
+        padding: 0.8rem 1.5rem;
+      }
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, rgba(255, 240, 235, 0.92) 0%, rgba(253, 233, 240, 0.88) 100%);
+      border-radius: 0 0 3rem 3rem;
+      overflow: hidden;
+      margin-top: 0;
+    }
+    
+    .hero-bg-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      opacity: 0.3;
+      filter: brightness(1.02) contrast(1.05);
+    }
+    
+    .hero .container {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .hero-grid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 85vh;
+      padding: 4rem 1rem;
+    }
+    
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .hero-content h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: #3D2A25;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 2px 10px rgba(255, 245, 240, 0.8);
+      letter-spacing: -0.02em;
+    }
+    
+    .hero-content p {
+      font-size: 1.2rem;
+      color: #4F3A35;
+      max-width: 680px;
+      margin: 0 auto 2rem auto;
+      line-height: 1.6;
+      font-weight: 500;
+      background: rgba(255, 248, 245, 0.7);
+      backdrop-filter: blur(8px);
+      padding: 1rem 2rem;
+      border-radius: 60px;
+      display: inline-block;
+      width: auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+    
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 245, 240, 0.85);
+      backdrop-filter: blur(4px);
+      border-radius: 60px;
+      padding: 0.5rem 1.2rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #A06B60;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.3px;
+    }
+    
+    .btn-whatsapp {
+      background-color: #25D366;
+      color: white;
+      border: none;
+      padding: 1rem 2.5rem;
+      border-radius: var(--radius-btn);
+      font-weight: 600;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.25);
+      text-decoration: none;
+      margin-top: 0.5rem;
+    }
+    .btn-whatsapp:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 28px rgba(37, 211, 102, 0.35);
+      background-color: #20b859;
+    }
+
+    /* About */
+    .about-card {
+      background: var(--white);
+      border-radius: var(--radius-card);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+    }
+    .about-text {
+      flex: 2;
+    }
+    .about-text h3 {
+      font-size: 1.8rem;
+      color: #C2798B;
+      margin-bottom: 1rem;
+    }
+    .about-text p {
+      margin-bottom: 1rem;
+      color: #4F413E;
+    }
+    .year-badge {
+      background: var(--pink-light);
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      display: inline-block;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      transition: all 0.3s ease;
+      cursor: default;
+    }
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-hover);
+    }
+    .service-img {
+      height: 220px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: transform 0.5s ease;
+    }
+    .service-card:hover .service-img {
+      transform: scale(1.02);
+    }
+    .service-info {
+      padding: 1.5rem;
+    }
+    .service-info h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #4B2D27;
+      margin-bottom: 0.5rem;
+    }
+    .service-info p {
+      color: #6D5B57;
+      font-size: 0.95rem;
+    }
+
+    /* Gallery Grid with names */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+    .gallery-item {
+      border-radius: 1.2rem;
+      overflow: hidden;
+      background: var(--white);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      transition: 0.3s ease;
+    }
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+    .gallery-img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      transition: 0.4s;
+      display: block;
+    }
+    .gallery-item:hover .gallery-img {
+      transform: scale(1.03);
+    }
+    .gallery-name {
+      padding: 0.8rem 1rem;
+      text-align: center;
+      font-weight: 600;
+      color: #5C3D36;
+      background: #FFFBF8;
+      font-size: 0.9rem;
+      letter-spacing: 0.3px;
+      border-top: 1px solid #FDE5DC;
+      font-family: 'Poppins', sans-serif;
+    }
+    .gallery-name i {
+      margin-right: 6px;
+      color: #D48C9C;
+      font-size: 0.8rem;
+    }
+
+    /* Contact Section */
+    .contact-wrapper {
+      background: var(--white);
+      border-radius: var(--radius-card);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: space-between;
+    }
+    .contact-info {
+      flex: 1;
+    }
+    .contact-info p {
+      margin: 1rem 0;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1rem;
+    }
+    .contact-info i {
+      width: 32px;
+      color: #D48C9C;
+      font-size: 1.3rem;
+    }
+    .whatsapp-btn-large {
+      background: #25D366;
+      color: white;
+      border: none;
+      padding: 0.9rem 2rem;
+      border-radius: 3rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 1rem;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+    .whatsapp-btn-large:hover {
+      background: #20b859;
+      transform: scale(1.02);
+    }
+
+    /* Footer */
+    footer {
+      background: #FEF2EC;
+      padding: 2rem 0;
+      text-align: center;
+      border-radius: 2rem 2rem 0 0;
+      margin-top: 2rem;
+    }
+    footer .footer-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+    .design-credit {
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      color: #A87A6E;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
+    .design-credit i {
+      margin: 0 4px;
+    }
+
+    /* Floating WhatsApp */
+    .float-wa {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      background-color: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      transition: all 0.2s;
+      z-index: 1100;
+      text-decoration: none;
+    }
+    .float-wa:hover {
+      transform: scale(1.08);
+      background-color: #20b359;
+    }
+
+    /* fade-in effect */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-up.appear {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* responsive */
+    @media (max-width: 800px) {
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+      .hero-content p {
+        font-size: 0.95rem;
+        padding: 0.8rem 1.2rem;
+        width: 90%;
+      }
+      .hero-grid {
+        min-height: 70vh;
+        padding: 2rem 1rem;
+      }
+      h2 {
+        font-size: 1.8rem;
+      }
+      section {
+        padding: 3rem 0;
+      }
+      .hero-bg-image {
+        object-position: 30% center;
+      }
+      .gallery-name {
+        font-size: 0.8rem;
+        padding: 0.6rem;
+      }
+      .services-grid {
+        gap: 1.2rem;
+      }
+    }
+
+    /* Small mobile devices */
+    @media (max-width: 480px) {
+      body {
+        padding-top: 65px;
+      }
+      .logo h1 {
+        font-size: 1.3rem;
+      }
+      .logo p {
+        font-size: 0.6rem;
+      }
+      .navbar {
+        padding: 0.6rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Fixed Navbar - ALWAYS VISIBLE, NEVER MOVES -->
+<nav class="navbar" id="navbar">
+  <div class="logo">
+    <h1>Cakes With Love</h1>
+    <p>Amanzimtoti • Est. 2020</p>
+  </div>
+  
+  <!-- Burger Menu Button (only visible on mobile) -->
+  <button class="burger-menu" id="burgerBtn" aria-label="Menu">
+    <i class="fas fa-bars"></i>
+  </button>
+  
+  <!-- Navigation Links -->
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Mobile Menu Close Button (separate element, only visible on mobile) -->
+<button class="close-menu" id="closeMenuBtn" aria-label="Close menu">
+  <i class="fas fa-times"></i>
+</button>
+
+<main>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <img class="hero-bg-image" src="assets/images/hero.png" alt="Bakery background with cakes and desserts" 
+         onerror="this.src='https://placehold.co/1920x1080/FDE9F0/F8C4D4?text=Upload+Your+Image+1920x1080';">
+    <div class="container hero-grid fade-up">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fas fa-heart" style="color:#E9A6B2;"></i> 
+          <span>Artisan Bakery • Amanzimtoti</span>
+        </div>
+        <h1>Beautiful Custom Cakes That Make Your Moments Unforgettable</h1>
+        <p>Trusted in Amanzimtoti since 2020 — we create stunning cakes, cupcakes, desserts, savoury platters, and supply baking essentials for every occasion.</p>
+        <a href="https://wa.me/27636961897?text=Hi%20Cakes%20With%20Love%2C%20I'd%20like%20to%20place%20an%20order" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-whatsapp"></i> Order on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container fade-up">
+      <div class="about-card">
+        <div class="about-text">
+          <h3>✨ Baked with passion since 2020</h3>
+          <p>Cakes With Love was born in the heart of Amanzimtoti, South Africa, with a simple belief: every celebration deserves a personal, delicious touch. What started as a small home bakery has grown into a beloved spot for custom cakes, cupcakes, traditional sweetmeats, and savoury delights.</p>
+          <p>We pour love into each creation, using only quality ingredients and elegant designs. Whether it's a wedding, birthday, or corporate gathering — we make every moment memorable.</p>
+          <div class="year-badge"><i class="far fa-calendar-alt"></i> Established 2020 · proudly local</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services">
+    <div class="container fade-up">
+      <h2>Our Sweet & Savoury Offerings</h2>
+      <p class="section-sub">Custom creations for every craving and celebration</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-img" style="background-image: url('assets/images/cakes.png');" onerror="this.style.backgroundImage='url(https://placehold.co/600x450/FCE4EC/F2B5C5?text=Cakes+600x450)'"></div>
+          <div class="service-info">
+            <h3>🎂 Cakes</h3>
+            <p>Custom-designed cakes for birthdays, weddings, and special occasions, crafted to match your vision.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-img" style="background-image: url('assets/images/cupcakes.png');" onerror="this.style.backgroundImage='url(https://placehold.co/600x450/FCE4EC/F2B5C5?text=Cupcakes+600x450)'"></div>
+          <div class="service-info">
+            <h3>🧁 Cupcakes</h3>
+            <p>Beautifully decorated cupcakes in a variety of flavors, perfect for events and gifting.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-img" style="background-image: url('assets/images/sweetplatter.png');" onerror="this.style.backgroundImage='url(https://placehold.co/600x450/FCE4EC/F2B5C5?text=Desserts+600x450)'"></div>
+          <div class="service-info">
+            <h3>🍮 Desserts & Sweetmeats</h3>
+            <p>A selection of delicious desserts and traditional sweetmeats made fresh with quality ingredients.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-img" style="background-image: url('assets/images/savoury.png');" onerror="this.style.backgroundImage='url(https://placehold.co/600x450/FCE4EC/F2B5C5?text=Savoury+600x450)'"></div>
+          <div class="service-info">
+            <h3>🥨 Savoury Platters</h3>
+            <p>Freshly prepared savoury platters ideal for parties, meetings, and gatherings.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-img" style="background-image: url('assets/images/sweettreats.png');" onerror="this.style.backgroundImage='url(https://placehold.co/600x450/FCE4EC/F2B5C5?text=Baking+Supplies+600x450)'"></div>
+          <div class="service-info">
+            <h3>🥄 Baking Supplies</h3>
+            <p>We also supply baking essentials including ingredients, tools, and accessories for home bakers.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-img" style="background-image: url('assets/images/platters.png');" onerror="this.style.backgroundImage='url(https://placehold.co/600x450/FCE4EC/F2B5C5?text=Sweet+Treats+600x450)'"></div>
+          <div class="service-info">
+            <h3>🍬 Sweet Treats</h3>
+            <p>Indulge in handmade fudge, chocolate bark, marshmallow pops, and old-fashioned sweets.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-img" style="background-image: url('assets/images/personalise.png');" onerror="this.style.backgroundImage='url(https://placehold.co/600x450/FCE4EC/F2B5C5?text=Personalised+Cookies+600x450)'"></div>
+          <div class="service-info">
+            <h3>🍪 Personalised Cookies</h3>
+            <p>Custom-iced cookies with names or themed designs. Ideal for parties, weddings, and corporate gifts.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-img" style="background-image: url('assets/images/gifts.png');" onerror="this.style.backgroundImage='url(https://placehold.co/600x450/FCE4EC/F2B5C5?text=Perfect+Gifts+600x450)'"></div>
+          <div class="service-info">
+            <h3>🎁 Perfect Gifts</h3>
+            <p>Curated gift boxes filled with an assortment of our finest bakes — from cookie jars to dessert hampers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery">
+    <div class="container fade-up">
+      <h2>Sweet Moments Gallery</h2>
+      <p class="section-sub">A glimpse of our creations — from elegant cakes to personalised cookies</p>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img class="gallery-img" src="assets/images/gallery-cake.jpg" alt="Elegant custom cake" onerror="this.src='https://placehold.co/500x500/FDE9F0/D48C9C?text=Elegant+Cake+500x500'">
+          <div class="gallery-name"><i class="fas fa-birthday-cake"></i> Elegant Celebration Cake</div>
+        </div>
+        <div class="gallery-item">
+          <img class="gallery-img" src="assets/images/gallery-cupcakes.jpg" alt="Cupcakes" onerror="this.src='https://placehold.co/500x500/FDE9F0/D48C9C?text=Cupcakes+500x500'">
+          <div class="gallery-name"><i class="fas fa-candy-cane"></i> Gourmet Cupcakes</div>
+        </div>
+        <div class="gallery-item">
+          <img class="gallery-img" src="assets/images/gallery-desserts.jpg" alt="Dessert platter" onerror="this.src='https://placehold.co/500x500/FDE9F0/D48C9C?text=Desserts+500x500'">
+          <div class="gallery-name"><i class="fas fa-mug-hot"></i> Dessert & Sweetmeats</div>
+        </div>
+        <div class="gallery-item">
+          <img class="gallery-img" src="assets/images/gallery-savoury.jpg" alt="Savoury Platter" onerror="this.src='https://placehold.co/500x500/FDE9F0/D48C9C?text=Savoury+Platter+500x500'">
+          <div class="gallery-name"><i class="fas fa-cheese"></i> Savoury Platter</div>
+        </div>
+        <div class="gallery-item">
+          <img class="gallery-img" src="assets/images/gallery-cookies.jpg" alt="Personalised Cookies" onerror="this.src='https://placehold.co/500x500/FDE9F0/D48C9C?text=Cookies+500x500'">
+          <div class="gallery-name"><i class="fas fa-cookie-bite"></i> Personalised Cookies</div>
+        </div>
+        <div class="gallery-item">
+          <img class="gallery-img" src="assets/images/gallery-gifts.jpg" alt="Perfect Gifts Box" onerror="this.src='https://placehold.co/500x500/FDE9F0/D48C9C?text=Gift+Hampers+500x500'">
+          <div class="gallery-name"><i class="fas fa-gift"></i> Perfect Gift Hampers</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container fade-up">
+      <h2>Get In Touch</h2>
+      <p class="section-sub">Let's create something beautiful together — order your custom treats today</p>
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <p><i class="far fa-envelope"></i> cindybaijoo@gmail.com</p>
+          <p><i class="fas fa-phone-alt"></i> +27 63 696 1897</p>
+          <p><i class="fab fa-whatsapp"></i> WhatsApp / Call</p>
+          <a href="https://wa.me/27636961897?text=Hi%20Cakes%20With%20Love%2C%20I'd%20like%20to%20place%20an%20order" target="_blank" class="whatsapp-btn-large"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+        </div>
+        <div style="flex:1; background: #FEF1EA; border-radius: 1.5rem; padding: 1.5rem; text-align: center;">
+          <i class="fas fa-map-marker-alt" style="font-size: 2rem; color: #D48C9C;"></i>
+          <p style="margin-top: 0.8rem;"><strong>Amanzimtoti, South Africa</strong><br>Delivery & pickup available</p>
+          <small style="color:#B48C80;">We'd love to hear your event ideas!</small>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="container footer-content">
+    <h3 style="font-family: 'Playfair Display'; color: #C88699;">Cakes With Love</h3>
+    <p>✨ Established 2020 ✨</p>
+    <p>&copy; 2025 Cakes With Love – Handcrafted with joy in Amanzimtoti. All rights reserved.</p>
+    <div class="design-credit">
+      <i class="fas fa-palette"></i> Designed by Inkspire Digital Designs
+    </div>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/27636961897?text=Hi%20Cakes%20With%20Love%2C%20I'd%20like%20to%20place%20an%20order" class="float-wa" target="_blank" rel="noopener noreferrer">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- JavaScript -->
+<script>
+  // Burger Menu Functionality
+  const burgerBtn = document.getElementById('burgerBtn');
+  const navLinks = document.getElementById('navLinks');
+  const closeMenuBtn = document.getElementById('closeMenuBtn');
+  
+  function openMenu() {
+    navLinks.classList.add('active');
+    closeMenuBtn.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+  
+  function closeMenu() {
+    navLinks.classList.remove('active');
+    closeMenuBtn.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+  
+  burgerBtn.addEventListener('click', openMenu);
+  closeMenuBtn.addEventListener('click', closeMenu);
+  
+  // Close menu when clicking on a link
+  const navItems = document.querySelectorAll('.nav-links a');
+  navItems.forEach(item => {
+    item.addEventListener('click', () => {
+      closeMenu();
+    });
+  });
+  
+  // Close menu when clicking outside on mobile
+  document.addEventListener('click', function(event) {
+    const isClickInsideNav = navLinks.contains(event.target);
+    const isClickOnBurger = burgerBtn.contains(event.target);
+    const isClickOnClose = closeMenuBtn.contains(event.target);
+    
+    if (navLinks.classList.contains('active') && !isClickInsideNav && !isClickOnBurger && !isClickOnClose) {
+      closeMenu();
+    }
+  });
+  
+  // Navbar shadow effect on scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+  
+  // Fade-up effect on scroll
+  const fadeElements = document.querySelectorAll('.fade-up');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('appear');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: "0px 0px -20px 0px" });
+  fadeElements.forEach(el => observer.observe(el));
+  
+  // Smooth scroll for navigation links
+  document.querySelectorAll('.nav-links a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if(targetId && targetId !== '#') {
+        const targetEl = document.querySelector(targetId);
+        if(targetEl) {
+          e.preventDefault();
+          targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  });
+  
+  // Handle resize for close button visibility
+  function handleResize() {
+    if (window.innerWidth > 800) {
+      closeMenu();
+      closeMenuBtn.style.display = 'none';
+    } else {
+      if (!navLinks.classList.contains('active')) {
+        closeMenuBtn.style.display = 'none';
+      }
+    }
+  }
+  
+  window.addEventListener('resize', handleResize);
+  handleResize();
+</script>
+</body>
+</html>
